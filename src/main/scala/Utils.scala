@@ -23,7 +23,7 @@ object Utils {
     }
   }
 
-  def asyncTask[T](task: => Option[T])(callback: T => Unit = { _: T => }) {
+  def asyncTask[T](task: => Option[T])(callback: T => Any = { _: T => }) {
     val handler = new Handler
     new Thread(new Runnable {
       def run {
